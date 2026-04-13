@@ -1,2 +1,0 @@
-# capavista
-capavista
