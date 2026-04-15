@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Capavista Cave House</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- Auth guard -->
+<script>
+  if (!sessionStorage.getItem('cv_admin')) {
+    window.location.href = 'login.html';
+  }
+</script>
+
+<!-- Sidebar overlay (mobile) -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="dashboard-wrap">
+
+  <!-- ══ SIDEBAR ═══════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Brand -->
+    <div class="sidebar__brand">
+      <div class="sidebar__logo-mark">
+        <div class="logo-gem">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 9l3 11h14l3-11L12 2z" stroke="#C4965A" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="sidebar__hotel-name">Capavista</span>
+      </div>
+      <div class="sidebar__tagline">Management Portal</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar__nav">
+
+      <div class="nav-section-label">Overview</div>
+
+      <a class="nav-item active" data-section="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        Dashboard
+      </a>
+
+      <div class="nav-section-label">Reservations</div>
+
+      <a class="nav-item" data-section="reservations">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Calendar
+      </a>
+
+      <a class="nav-item" data-section="bookings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        Bookings
+        <span class="nav-badge">42</span>
+      </a>
+
+      <a class="nav-item" data-section="revenue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+        Revenue
+      </a>
+
+      <div class="nav-section-label">Hotel</div>
+
+      <a class="nav-item" data-section="rooms">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        Rooms
+      </a>
+
+      <a class="nav-item" data-section="gallery">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+        Gallery
+      </a>
+
+      <a class="nav-item" data-section="offers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
+        </svg>
+        Offers
+      </a>
+
+      <div class="nav-section-label">Communication</div>
+
+      <a class="nav-item" data-section="messages">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        Messages
+        <span class="nav-badge">7</span>
+      </a>
+
+      <a class="nav-item" data-section="contacts">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Contact Requests
+        <span class="nav-badge">3</span>
+      </a>
+
+      <div class="nav-section-label">Insights</div>
+
+      <a class="nav-item" data-section="analytics">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
+        </svg>
+        Analytics
+      </a>
+
+    </nav>
+
+    <!-- User + Logout -->
+    <div class="sidebar__footer">
+      <div class="sidebar__user">
+        <div class="user-avatar" id="userAvatar">A</div>
+        <div class="user-info">
+          <div class="user-name" id="userName">Admin</div>
+          <div class="user-role">Hotel Manager</div>
+        </div>
+      </div>
+      <button class="btn-logout" id="logoutBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Sign Out
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ══ MAIN CONTENT ═══════════════════════════════ -->
+  <div class="main-content">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button class="hamburger-btn" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="topbar__title">
+        <h1 id="sectionTitle">Dashboard</h1>
+        <p id="sectionDate"></p>
+      </div>
+
+      <div class="topbar__search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" placeholder="Search bookings, guests..." />
+      </div>
+
+      <div class="topbar__actions">
+        <button class="icon-btn" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <div class="notif-dot"></div>
+        </button>
+        <button class="icon-btn" title="Website" onclick="window.open('index.html','_blank')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── Page Body ────────────────────────────── -->
+    <div class="page-body">
+
+      <!-- ══════════ OVERVIEW ══════════ -->
+      <section class="section active" id="sec-overview">
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card stat-card--gold">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <div class="stat-trend stat-trend--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                +12%
+              </div>
+            </div>
+            <div class="stat-value" data-count="42">0</div>
+            <div class="stat-label">Bookings This Month</div>
+          </div>
+
+          <div class="stat-card stat-card--green">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div class="stat-trend stat-trend--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                +8%
+              </div>
+            </div>
+            <div class="stat-value" style="font-size:28px" data-count="8450" data-prefix="€">€0</div>
+            <div class="stat-label">Revenue This Month</div>
+          </div>
+
+          <div class="stat-card stat-card--blue">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div class="stat-trend stat-trend--up">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                +5%
+              </div>
+            </div>
+            <div class="stat-value" data-count="78" data-suffix="%">0%</div>
+            <div class="stat-label">Occupancy Rate</div>
+          </div>
+
+          <div class="stat-card stat-card--red">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--red">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div class="stat-trend stat-trend--down">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                -2
+              </div>
+            </div>
+            <div class="stat-value" data-count="7">0</div>
+            <div class="stat-label">Unread Messages</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <a class="quick-action" onclick="navigate('bookings')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+            </svg>
+            <span>New Booking</span>
+          </a>
+          <a class="quick-action" onclick="navigate('rooms')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M12 2v2M12 20v2M4.93 4.93l1.41 1.41M18.66 18.66l1.41 1.41M2 12h2M20 12h2"/>
+            </svg>
+            <span>Room Availability</span>
+          </a>
+          <a class="quick-action" onclick="navigate('gallery')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <span>Upload Photos</span>
+          </a>
+          <a class="quick-action" onclick="navigate('offers')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+              <line x1="7" y1="7" x2="7.01" y2="7"/>
+            </svg>
+            <span>New Offer</span>
+          </a>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title">Revenue Overview</div>
+                <div class="chart-subtitle">Last 6 months · EUR</div>
+              </div>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <div class="legend-dot" style="background:#C4965A"></div>
+                  Revenue
+                </div>
+                <div class="legend-item">
+                  <div class="legend-dot" style="background:rgba(196,150,90,0.3)"></div>
+                  Target
+                </div>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <div class="chart-title">Room Occupancy</div>
+                <div class="chart-subtitle">Current month</div>
+              </div>
+            </div>
+            <div class="donut-wrap">
+              <canvas id="occupancyChart" width="180" height="180" style="max-width:180px;max-height:180px"></canvas>
+              <div class="donut-center">
+                <div class="value">78%</div>
+                <div class="label">Occupancy</div>
+              </div>
+            </div>
+            <div class="room-legend">
+              <div class="room-legend-item">
+                <div class="room-legend-color" style="background:#C4965A"></div>
+                <div class="room-legend-name">Cave Room</div>
+                <div class="room-legend-pct">90%</div>
+              </div>
+              <div class="room-legend-item">
+                <div class="room-legend-color" style="background:#8B6332"></div>
+                <div class="room-legend-name">Stone Room</div>
+                <div class="room-legend-pct">80%</div>
+              </div>
+              <div class="room-legend-item">
+                <div class="room-legend-color" style="background:#6CA0DC"></div>
+                <div class="room-legend-name">Superior Stone</div>
+                <div class="room-legend-pct">75%</div>
+              </div>
+              <div class="room-legend-item">
+                <div class="room-legend-color" style="background:#4CAF7D"></div>
+                <div class="room-legend-name">Traditional Suite</div>
+                <div class="room-legend-pct">65%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Bookings -->
+        <div class="table-card">
+          <div class="table-header">
+            <div class="table-title">Recent Bookings</div>
+            <div class="table-actions">
+              <button class="btn-sm" onclick="navigate('bookings')">View All</button>
+              <button class="btn-sm btn-sm--gold" onclick="openModal('addBookingModal')">+ Add Booking</button>
+            </div>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Guest</th>
+                  <th>Room</th>
+                  <th>Check-In</th>
+                  <th>Check-Out</th>
+                  <th>Nights</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="guest-name">Sophie Laurent</div><div class="booking-id">#BK-2024-042</div></td>
+                  <td>Traditional Suite</td>
+                  <td>Apr 18, 2025</td>
+                  <td>Apr 22, 2025</td>
+                  <td>4</td>
+                  <td style="color:var(--gold)">€560</td>
+                  <td><span class="badge badge--confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td><div class="guest-name">Marco Bianchi</div><div class="booking-id">#BK-2024-041</div></td>
+                  <td>Cave Room</td>
+                  <td>Apr 17, 2025</td>
+                  <td>Apr 20, 2025</td>
+                  <td>3</td>
+                  <td style="color:var(--gold)">€225</td>
+                  <td><span class="badge badge--checkin">Checked In</span></td>
+                </tr>
+                <tr>
+                  <td><div class="guest-name">Aisha Al-Rashid</div><div class="booking-id">#BK-2024-040</div></td>
+                  <td>Stone Room</td>
+                  <td>Apr 20, 2025</td>
+                  <td>Apr 25, 2025</td>
+                  <td>5</td>
+                  <td style="color:var(--gold)">€450</td>
+                  <td><span class="badge badge--pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td><div class="guest-name">James & Emily Clark</div><div class="booking-id">#BK-2024-039</div></td>
+                  <td>Superior Stone</td>
+                  <td>Apr 15, 2025</td>
+                  <td>Apr 17, 2025</td>
+                  <td>2</td>
+                  <td style="color:var(--gold)">€220</td>
+                  <td><span class="badge badge--confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td><div class="guest-name">Hiroshi Tanaka</div><div class="booking-id">#BK-2024-038</div></td>
+                  <td>Cave Room</td>
+                  <td>Apr 22, 2025</td>
+                  <td>Apr 26, 2025</td>
+                  <td>4</td>
+                  <td style="color:var(--gold)">€300</td>
+                  <td><span class="badge badge--cancelled">Cancelled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ══════════ RESERVATIONS (CALENDAR) ══════════ -->
+      <section class="section" id="sec-reservations">
+        <div class="section-head">
+          <div>
+            <h2>Reservations Calendar</h2>
+            <p>Visual overview of all bookings</p>
+          </div>
+          <button class="btn-sm btn-sm--gold" onclick="openModal('addBookingModal')">+ New Reservation</button>
+        </div>
+
+        <div class="calendar-wrap">
+          <div class="calendar-head">
+            <div class="calendar-nav">
+              <button class="cal-btn" id="prevMonth">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="cal-month" id="calMonthLabel">April 2025</div>
+              <button class="cal-btn" id="nextMonth">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;font-size:12px;color:var(--text-3)">
+              <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;background:var(--gold-dim);border-radius:3px;border:1px solid var(--gold)"></span>Has Booking</span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="display:inline-block;width:10px;height:10px;background:rgba(76,175,125,0.2);border-radius:3px;border:1px solid var(--green)"></span>Today</span>
+            </div>
+          </div>
+          <div class="calendar-grid">
+            <div class="cal-days-header">
+              <div class="cal-day-name">Sun</div>
+              <div class="cal-day-name">Mon</div>
+              <div class="cal-day-name">Tue</div>
+              <div class="cal-day-name">Wed</div>
+              <div class="cal-day-name">Thu</div>
+              <div class="cal-day-name">Fri</div>
+              <div class="cal-day-name">Sat</div>
+            </div>
+            <div class="cal-days" id="calDays"></div>
+          </div>
+        </div>
+
+        <!-- Upcoming reservations list -->
+        <div style="margin-top:24px">
+          <div class="table-card">
+            <div class="table-header">
+              <div class="table-title">Upcoming Arrivals</div>
+            </div>
+            <div style="overflow-x:auto">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Guest</th><th>Room</th><th>Arrival</th><th>Departure</th><th>Pax</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="guest-name">Sophie Laurent</div></td>
+                    <td>Traditional Suite</td><td>Apr 18</td><td>Apr 22</td><td>2</td>
+                    <td><span class="badge badge--confirmed">Confirmed</span></td>
+                    <td><button class="btn-sm">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="guest-name">Aisha Al-Rashid</div></td>
+                    <td>Stone Room</td><td>Apr 20</td><td>Apr 25</td><td>2</td>
+                    <td><span class="badge badge--pending">Pending</span></td>
+                    <td><button class="btn-sm">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><div class="guest-name">Yuki Nakamura</div></td>
+                    <td>Cave Room</td><td>Apr 24</td><td>Apr 27</td><td>1</td>
+                    <td><span class="badge badge--confirmed">Confirmed</span></td>
+                    <td><button class="btn-sm">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════ BOOKINGS ══════════ -->
+      <section class="section" id="sec-bookings">
+        <div class="section-head">
+          <div>
+            <h2>All Bookings</h2>
+            <p>Manage and track all reservations</p>
+          </div>
+          <div style="display:flex;gap:10px">
+            <select class="form-select" style="width:160px;font-size:12px">
+              <option>All Statuses</option>
+              <option>Confirmed</option>
+              <option>Pending</option>
+              <option>Checked In</option>
+              <option>Cancelled</option>
+            </select>
+            <button class="btn-sm btn-sm--gold" onclick="openModal('addBookingModal')">+ New Booking</button>
+          </div>
+        </div>
+        <div class="table-card">
+          <div style="padding:16px 24px;border-bottom:1px solid var(--border)">
+            <div class="topbar__search" style="max-width:320px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;color:var(--text-3)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" placeholder="Search by name, ID, room..." style="background:none;border:none;outline:none;font-family:'Montserrat',sans-serif;font-size:12px;color:var(--text-1);width:100%"/>
+            </div>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="data-table">
+              <thead>
+                <tr><th>ID</th><th>Guest</th><th>Room</th><th>Check-In</th><th>Check-Out</th><th>Nights</th><th>Amount</th><th>Source</th><th>Status</th><th></th></tr>
+              </thead>
+              <tbody id="bookingsTableBody">
+                <!-- populated by JS -->
+              </tbody>
+            </table>
+          </div>
+          <div style="padding:16px 24px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-3)">
+            <span>Showing 1–10 of 42 bookings</span>
+            <div style="display:flex;gap:8px">
+              <button class="btn-sm">← Prev</button>
+              <button class="btn-sm" style="background:var(--gold-dim);border-color:var(--gold-border);color:var(--gold)">1</button>
+              <button class="btn-sm">2</button>
+              <button class="btn-sm">3</button>
+              <button class="btn-sm">Next →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════ REVENUE ══════════ -->
+      <section class="section" id="sec-revenue">
+        <div class="section-head">
+          <div><h2>Revenue & Finance</h2><p>Financial performance overview</p></div>
+        </div>
+
+        <div class="stats-grid" style="margin-bottom:28px">
+          <div class="stat-card stat-card--gold">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div class="stat-trend stat-trend--up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>+18%</div>
+            </div>
+            <div class="stat-value" style="font-size:28px">€48,250</div>
+            <div class="stat-label">Total Revenue YTD</div>
+          </div>
+          <div class="stat-card stat-card--green">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+              </div>
+              <div class="stat-trend stat-trend--up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>+6%</div>
+            </div>
+            <div class="stat-value" style="font-size:28px">€112</div>
+            <div class="stat-label">Avg Nightly Rate</div>
+          </div>
+          <div class="stat-card stat-card--blue">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="stat-trend stat-trend--up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>+3%</div>
+            </div>
+            <div class="stat-value" style="font-size:28px">€87</div>
+            <div class="stat-label">RevPAR</div>
+          </div>
+          <div class="stat-card stat-card--red">
+            <div class="stat-top">
+              <div class="stat-icon stat-icon--red">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+            <div class="stat-value" style="font-size:28px">156</div>
+            <div class="stat-label">Total Guests YTD</div>
+          </div>
+        </div>
+
+        <div class="charts-row" style="grid-template-columns:1fr 1fr">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div><div class="chart-title">Monthly Revenue</div><div class="chart-subtitle">2025 · Full Year</div></div>
+            </div>
+            <div class="chart-wrap"><canvas id="monthlyRevenueChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header">
+              <div><div class="chart-title">Revenue by Room Type</div><div class="chart-subtitle">Year to date</div></div>
+            </div>
+            <div class="chart-wrap"><canvas id="roomRevenueChart"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════ ROOMS ══════════ -->
+      <section class="section" id="sec-rooms">
+        <div class="section-head">
+          <div><h2>Room Management</h2><p>Manage availability, pricing and details</p></div>
+          <button class="btn-sm btn-sm--gold" onclick="openModal('addRoomModal')">+ Add Room</button>
+        </div>
+
+        <div class="rooms-grid">
+          <div class="room-mgmt-card">
+            <div class="room-mgmt-img">
+              <img src="../Capavista Cave House/42deda36.jpeg" alt="Cave Room" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'280\' height=\'160\'%3E%3Crect fill=\'%231A1109\'/%3E%3C/svg%3E'"/>
+              <div class="room-mgmt-status"><span class="badge badge--confirmed">Available</span></div>
+            </div>
+            <div class="room-mgmt-body">
+              <div class="room-mgmt-name">Cave Room</div>
+              <div class="room-mgmt-price">€75 / night · 4 units</div>
+              <div class="room-mgmt-actions">
+                <button class="btn-sm" onclick="openModal('addRoomModal')">Edit</button>
+                <button class="btn-sm">Availability</button>
+                <button class="btn-sm" style="color:var(--red)">Block</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="room-mgmt-card">
+            <div class="room-mgmt-img">
+              <img src="../Capavista Cave House/b932e973.jpeg" alt="Stone Room" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'280\' height=\'160\'%3E%3Crect fill=\'%231A1109\'/%3E%3C/svg%3E'"/>
+              <div class="room-mgmt-status"><span class="badge badge--confirmed">Available</span></div>
+            </div>
+            <div class="room-mgmt-body">
+              <div class="room-mgmt-name">Stone Room</div>
+              <div class="room-mgmt-price">€90 / night · 3 units</div>
+              <div class="room-mgmt-actions">
+                <button class="btn-sm" onclick="openModal('addRoomModal')">Edit</button>
+                <button class="btn-sm">Availability</button>
+                <button class="btn-sm" style="color:var(--red)">Block</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="room-mgmt-card">
+            <div class="room-mgmt-img">
+              <img src="../Capavista Cave House/0146b11c.jpeg" alt="Superior Stone" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'280\' height=\'160\'%3E%3Crect fill=\'%231A1109\'/%3E%3C/svg%3E'"/>
+              <div class="room-mgmt-status"><span class="badge badge--pending">3 Booked</span></div>
+            </div>
+            <div class="room-mgmt-body">
+              <div class="room-mgmt-name">Superior Stone Room</div>
+              <div class="room-mgmt-price">€110 / night · 2 units</div>
+              <div class="room-mgmt-actions">
+                <button class="btn-sm" onclick="openModal('addRoomModal')">Edit</button>
+                <button class="btn-sm">Availability</button>
+                <button class="btn-sm" style="color:var(--red)">Block</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="room-mgmt-card">
+            <div class="room-mgmt-img">
+              <img src="../Capavista Cave House/63ab1ea6.jpeg" alt="Traditional Suite" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'280\' height=\'160\'%3E%3Crect fill=\'%231A1109\'/%3E%3C/svg%3E'"/>
+              <div class="room-mgmt-status"><span class="badge badge--confirmed">Available</span></div>
+            </div>
+            <div class="room-mgmt-body">
+              <div class="room-mgmt-name">Traditional Suite</div>
+              <div class="room-mgmt-price">€140 / night · 1 unit</div>
+              <div class="room-mgmt-actions">
+                <button class="btn-sm" onclick="openModal('addRoomModal')">Edit</button>
+                <button class="btn-sm">Availability</button>
+                <button class="btn-sm" style="color:var(--red)">Block</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════ GALLERY ══════════ -->
+      <section class="section" id="sec-gallery">
+        <div class="section-head">
+          <div><h2>Photo Gallery</h2><p>Manage hotel photos and media</p></div>
+        </div>
+
+        <div class="upload-zone" id="uploadZone">
+          <div class="upload-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <div class="upload-text">Drag & drop photos here, or click to browse</div>
+          <div class="upload-hint">Supports JPG, PNG, WEBP · Max 10MB per file</div>
+          <input type="file" id="fileInput" multiple accept="image/*" style="display:none"/>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap">
+          <button class="btn-sm" style="background:var(--gold-dim);border-color:var(--gold-border);color:var(--gold)">All Photos</button>
+          <button class="btn-sm">Cave Rooms</button>
+          <button class="btn-sm">Stone Rooms</button>
+          <button class="btn-sm">Terrace</button>
+          <button class="btn-sm">Breakfast</button>
+          <button class="btn-sm">Exterior</button>
+        </div>
+
+        <div class="gallery-admin-grid" id="galleryGrid">
+          <!-- populated by JS with placeholder items -->
+        </div>
+      </section>
+
+      <!-- ══════════ OFFERS ══════════ -->
+      <section class="section" id="sec-offers">
+        <div class="section-head">
+          <div><h2>Offers & Promotions</h2><p>Manage special deals and packages</p></div>
+          <button class="btn-sm btn-sm--gold" onclick="openModal('addOfferModal')">+ Create Offer</button>
+        </div>
+
+        <div class="offers-grid">
+          <div class="offer-card">
+            <div class="offer-card__top">
+              <div class="offer-title">Early Bird Discount</div>
+              <div class="offer-toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="offer-desc">Book 30+ days in advance and save 15% on any room. Perfect for advance planners.</div>
+            <div class="offer-meta">
+              <div class="offer-meta-item">Discount: <strong>15%</strong></div>
+              <div class="offer-meta-item">Min nights: <strong>2</strong></div>
+              <div class="offer-meta-item">Valid: <strong>Dec 2025</strong></div>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <div class="offer-card__top">
+              <div class="offer-title">Balloon Package</div>
+              <div class="offer-toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="offer-desc">2 nights in a Stone Room + sunrise balloon flight included. The ultimate Cappadocia experience.</div>
+            <div class="offer-meta">
+              <div class="offer-meta-item">Price: <strong>€350</strong></div>
+              <div class="offer-meta-item">Nights: <strong>2</strong></div>
+              <div class="offer-meta-item">Valid: <strong>Year-round</strong></div>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <div class="offer-card__top">
+              <div class="offer-title">Honeymoon Special</div>
+              <div class="offer-toggle on" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="offer-desc">Traditional Suite for 3 nights with welcome champagne, rose petals, and private rooftop dining.</div>
+            <div class="offer-meta">
+              <div class="offer-meta-item">Price: <strong>€520</strong></div>
+              <div class="offer-meta-item">Nights: <strong>3</strong></div>
+              <div class="offer-meta-item">Room: <strong>Suite Only</strong></div>
+            </div>
+          </div>
+
+          <div class="offer-card">
+            <div class="offer-card__top">
+              <div class="offer-title">Long Stay Discount</div>
+              <div class="offer-toggle" onclick="this.classList.toggle('on')"></div>
+            </div>
+            <div class="offer-desc">Stay 7 or more nights and receive 20% off your total stay. Ideal for slow travelers.</div>
+            <div class="offer-meta">
+              <div class="offer-meta-item">Discount: <strong>20%</strong></div>
+              <div class="offer-meta-item">Min nights: <strong>7</strong></div>
+              <div class="offer-meta-item">Status: <strong style="color:var(--red)">Inactive</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════ MESSAGES ══════════ -->
+      <section class="section" id="sec-messages">
+        <div class="section-head">
+          <div><h2>Guest Messages</h2><p>7 unread messages</p></div>
+        </div>
+
+        <div class="messages-layout">
+          <div class="messages-list">
+            <div class="msg-item unread active">
+              <div class="msg-time">Today, 09:14</div>
+              <div class="msg-name">Sophie Laurent</div>
+              <div class="msg-preview">Do you have airport transfers available from...</div>
+            </div>
+            <div class="msg-item unread">
+              <div class="msg-time">Today, 08:30</div>
+              <div class="msg-name">Marco Bianchi</div>
+              <div class="msg-preview">Hi, I'd like to know if breakfast is included...</div>
+            </div>
+            <div class="msg-item unread">
+              <div class="msg-time">Yesterday</div>
+              <div class="msg-name">Yuki Nakamura</div>
+              <div class="msg-preview">Can I request a late checkout? My flight is at...</div>
+            </div>
+            <div class="msg-item">
+              <div class="msg-time">Apr 14</div>
+              <div class="msg-name">James Clark</div>
+              <div class="msg-preview">Thank you for the wonderful stay! We loved...</div>
+            </div>
+            <div class="msg-item">
+              <div class="msg-time">Apr 13</div>
+              <div class="msg-name">Aisha Al-Rashid</div>
+              <div class="msg-preview">We're celebrating our anniversary, can you...</div>
+            </div>
+            <div class="msg-item unread">
+              <div class="msg-time">Apr 13</div>
+              <div class="msg-name">Carlos Rivera</div>
+              <div class="msg-preview">Is it possible to book a private cave dinner?</div>
+            </div>
+            <div class="msg-item unread">
+              <div class="msg-time">Apr 12</div>
+              <div class="msg-name">Elena Kowalski</div>
+              <div class="msg-preview">Do you offer guided tours to the underground...</div>
+            </div>
+            <div class="msg-item unread">
+              <div class="msg-time">Apr 12</div>
+              <div class="msg-name">Hiroshi Tanaka</div>
+              <div class="msg-preview">I need to cancel my booking, what is the policy...</div>
+            </div>
+          </div>
+
+          <div class="message-detail">
+            <div class="message-detail__header">
+              <div style="font-size:15px;font-weight:500;color:var(--text-1);margin-bottom:4px">Sophie Laurent</div>
+              <div style="font-size:11px;color:var(--text-3)">sophie.laurent@email.com · Today at 09:14 · Booking #BK-2024-042</div>
+            </div>
+            <div class="message-detail__body">
+              <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:16px">
+                <div style="font-size:13px;color:var(--text-2);line-height:1.8">
+                  Hello! I have a booking for April 18-22 in the Traditional Suite (reservation #BK-2024-042).<br><br>
+                  Do you offer airport transfers from Kayseri Airport? If yes, could you please let me know the price and how to arrange it?<br><br>
+                  Also, we're celebrating a special occasion — would it be possible to have the room decorated with flowers and candles?<br><br>
+                  Many thanks,<br>Sophie
+                </div>
+              </div>
+            </div>
+            <div class="message-detail__reply">
+              <textarea class="reply-input" placeholder="Write a reply..."></textarea>
+              <button class="btn-sm btn-sm--gold">Send</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════ ANALYTICS ══════════ -->
+      <section class="section" id="sec-analytics">
+        <div class="section-head">
+          <div><h2>Website Analytics</h2><p>Traffic and performance insights</p></div>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="analytic-card">
+            <div style="font-size:11px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">Page Views</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--text-1);line-height:1">12,480</div>
+            <div style="font-size:11px;color:var(--green);margin-top:6px">↑ +22% vs last month</div>
+            <div class="progress-bar" style="margin-top:16px"><div class="progress-fill" style="width:74%"></div></div>
+          </div>
+          <div class="analytic-card">
+            <div style="font-size:11px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">Sessions</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--text-1);line-height:1">4,210</div>
+            <div style="font-size:11px;color:var(--green);margin-top:6px">↑ +15% vs last month</div>
+            <div class="progress-bar" style="margin-top:16px"><div class="progress-fill" style="width:58%"></div></div>
+          </div>
+          <div class="analytic-card">
+            <div style="font-size:11px;color:var(--text-3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">Avg Session Duration</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--text-1);line-height:1">3:42</div>
+            <div style="font-size:11px;color:var(--green);margin-top:6px">↑ +0:28 vs last month</div>
+            <div class="progress-bar" style="margin-top:16px"><div class="progress-fill" style="width:82%"></div></div>
+          </div>
+        </div>
+
+        <div class="charts-row" style="grid-template-columns:1fr 340px;margin-bottom:24px">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div><div class="chart-title">Traffic Overview</div><div class="chart-subtitle">Daily visitors · Last 30 days</div></div>
+            </div>
+            <div class="chart-wrap"><canvas id="trafficChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-header">
+              <div><div class="chart-title">Traffic Sources</div><div class="chart-subtitle">Where visitors come from</div></div>
+            </div>
+            <div class="donut-wrap"><canvas id="sourcesChart" width="160" height="160" style="max-width:160px;max-height:160px"></canvas></div>
+            <div class="room-legend" style="margin-top:16px">
+              <div class="room-legend-item"><div class="room-legend-color" style="background:#C4965A"></div><div class="room-legend-name">Google Search</div><div class="room-legend-pct">42%</div></div>
+              <div class="room-legend-item"><div class="room-legend-color" style="background:#8B6332"></div><div class="room-legend-name">Direct</div><div class="room-legend-pct">28%</div></div>
+              <div class="room-legend-item"><div class="room-legend-color" style="background:#6CA0DC"></div><div class="room-legend-name">Social Media</div><div class="room-legend-pct">18%</div></div>
+              <div class="room-legend-item"><div class="room-legend-color" style="background:#4CAF7D"></div><div class="room-legend-name">Referral</div><div class="room-legend-pct">12%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-header"><div class="table-title">Top Pages</div></div>
+          <table class="data-table">
+            <thead><tr><th>Page</th><th>Views</th><th>Avg Time</th><th>Bounce Rate</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--text-1)">/rooms</td><td>3,840</td><td>4:12</td><td style="color:var(--green)">28%</td></tr>
+              <tr><td style="color:var(--text-1)">/</td><td>3,210</td><td>2:45</td><td style="color:var(--yellow)">42%</td></tr>
+              <tr><td style="color:var(--text-1)">/gallery</td><td>2,640</td><td>5:30</td><td style="color:var(--green)">18%</td></tr>
+              <tr><td style="color:var(--text-1)">/packages</td><td>1,820</td><td>3:15</td><td style="color:var(--yellow)">35%</td></tr>
+              <tr><td style="color:var(--text-1)">/contact</td><td>970</td><td>1:50</td><td style="color:var(--red)">55%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ══════════ CONTACTS ══════════ -->
+      <section class="section" id="sec-contacts">
+        <div class="section-head">
+          <div><h2>Contact Requests</h2><p>3 new requests awaiting response</p></div>
+        </div>
+
+        <div class="contacts-list">
+          <div class="contact-req">
+            <div>
+              <div class="contact-req__name">Valentina Rossi</div>
+              <div class="contact-req__email">valentina.rossi@mail.it</div>
+              <div class="contact-req__msg">Hello, I'm interested in booking for a group of 6 people in September. Do you have enough rooms available and is there a group discount? We are a family from Italy planning a cultural trip to Cappadocia.</div>
+              <div class="contact-req__meta">
+                <span>Apr 15, 2025 · 10:22 AM</span>
+                <span>Check-in: Sep 12, 2025</span>
+                <span>6 guests</span>
+              </div>
+            </div>
+            <div class="contact-req__actions">
+              <span class="badge badge--pending">New</span>
+              <button class="btn-sm btn-sm--gold">Reply</button>
+              <button class="btn-sm">Mark Done</button>
+            </div>
+          </div>
+
+          <div class="contact-req">
+            <div>
+              <div class="contact-req__name">David & Maria Thompson</div>
+              <div class="contact-req__email">david.thompson@gmail.com</div>
+              <div class="contact-req__msg">We would love to book the Traditional Suite for our 10th anniversary on June 20-24. Can you arrange a special decoration and maybe a private dinner on the rooftop? Budget is flexible.</div>
+              <div class="contact-req__meta">
+                <span>Apr 14, 2025 · 3:45 PM</span>
+                <span>Check-in: Jun 20, 2025</span>
+                <span>2 guests</span>
+              </div>
+            </div>
+            <div class="contact-req__actions">
+              <span class="badge badge--pending">New</span>
+              <button class="btn-sm btn-sm--gold">Reply</button>
+              <button class="btn-sm">Mark Done</button>
+            </div>
+          </div>
+
+          <div class="contact-req">
+            <div>
+              <div class="contact-req__name">Ahmed Al-Mansouri</div>
+              <div class="contact-req__email">ahmed.mansouri@hotmail.com</div>
+              <div class="contact-req__msg">Peace be upon you. I am coming with my wife and two children (ages 8 and 12) for 5 nights in August. Are there any family rooms or connecting rooms available? Also, is halal food available for breakfast?</div>
+              <div class="contact-req__meta">
+                <span>Apr 13, 2025 · 8:12 PM</span>
+                <span>Check-in: Aug 5, 2025</span>
+                <span>4 guests</span>
+              </div>
+            </div>
+            <div class="contact-req__actions">
+              <span class="badge badge--pending">New</span>
+              <button class="btn-sm btn-sm--gold">Reply</button>
+              <button class="btn-sm">Mark Done</button>
+            </div>
+          </div>
+
+          <div class="contact-req" style="opacity:0.6">
+            <div>
+              <div class="contact-req__name">Hana Müller</div>
+              <div class="contact-req__email">hana.mueller@web.de</div>
+              <div class="contact-req__msg">Thank you for the quick response! We will proceed with booking the Stone Room for May 2-6.</div>
+              <div class="contact-req__meta">
+                <span>Apr 10, 2025</span>
+              </div>
+            </div>
+            <div class="contact-req__actions">
+              <span class="badge badge--confirmed">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-body -->
+  </div><!-- /main-content -->
+</div><!-- /dashboard-wrap -->
+
+<!-- ══ MODALS ═══════════════════════════════════ -->
+
+<!-- Add Booking Modal -->
+<div class="modal-overlay" id="addBookingModal">
+  <div class="modal">
+    <div class="modal__header">
+      <div class="modal__title">New Booking</div>
+      <button class="modal__close" onclick="closeModal('addBookingModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Guest Name</label>
+          <input class="form-input" type="text" placeholder="Full name"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" placeholder="guest@email.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input class="form-input" type="tel" placeholder="+1 234 567 8900"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Room Type</label>
+          <select class="form-select">
+            <option>Cave Room — €75/night</option>
+            <option>Stone Room — €90/night</option>
+            <option>Superior Stone Room — €110/night</option>
+            <option>Traditional Suite — €140/night</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Check-In</label>
+          <input class="form-input" type="date"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Check-Out</label>
+          <input class="form-input" type="date"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Guests</label>
+          <select class="form-select">
+            <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option><option>4 Guests</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Source</label>
+          <select class="form-select">
+            <option>Direct / Website</option><option>WhatsApp</option><option>Email</option><option>Booking.com</option><option>Airbnb</option>
+          </select>
+        </div>
+        <div class="form-group form-group--full">
+          <label class="form-label">Special Requests</label>
+          <textarea class="form-textarea" placeholder="Any special requests or notes..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="btn-sm" onclick="closeModal('addBookingModal')">Cancel</button>
+      <button class="btn-sm btn-sm--gold" onclick="closeModal('addBookingModal');showToast('Booking created successfully')">Create Booking</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Room Modal -->
+<div class="modal-overlay" id="addRoomModal">
+  <div class="modal">
+    <div class="modal__header">
+      <div class="modal__title">Room Details</div>
+      <button class="modal__close" onclick="closeModal('addRoomModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Room Name</label>
+          <input class="form-input" type="text" placeholder="e.g. Cave Room"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Price / Night (€)</label>
+          <input class="form-input" type="number" placeholder="75"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Max Occupancy</label>
+          <select class="form-select"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Total Units</label>
+          <input class="form-input" type="number" placeholder="1"/>
+        </div>
+        <div class="form-group form-group--full">
+          <label class="form-label">Description</label>
+          <textarea class="form-textarea" placeholder="Room description..."></textarea>
+        </div>
+        <div class="form-group form-group--full">
+          <label class="form-label">Amenities (comma separated)</label>
+          <input class="form-input" type="text" placeholder="Wi-Fi, TV, Mini Fridge, En-suite Shower..."/>
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="btn-sm" onclick="closeModal('addRoomModal')">Cancel</button>
+      <button class="btn-sm btn-sm--gold" onclick="closeModal('addRoomModal');showToast('Room saved successfully')">Save Room</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Offer Modal -->
+<div class="modal-overlay" id="addOfferModal">
+  <div class="modal">
+    <div class="modal__header">
+      <div class="modal__title">Create Offer</div>
+      <button class="modal__close" onclick="closeModal('addOfferModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal__body">
+      <div class="form-grid">
+        <div class="form-group form-group--full">
+          <label class="form-label">Offer Name</label>
+          <input class="form-input" type="text" placeholder="e.g. Summer Special"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Discount Type</label>
+          <select class="form-select"><option>Percentage (%)</option><option>Fixed Amount (€)</option><option>Free Nights</option></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Discount Value</label>
+          <input class="form-input" type="number" placeholder="15"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valid From</label>
+          <input class="form-input" type="date"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valid Until</label>
+          <input class="form-input" type="date"/>
+        </div>
+        <div class="form-group form-group--full">
+          <label class="form-label">Description</label>
+          <textarea class="form-textarea" placeholder="Describe this offer..."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal__footer">
+      <button class="btn-sm" onclick="closeModal('addOfferModal')">Cancel</button>
+      <button class="btn-sm btn-sm--gold" onclick="closeModal('addOfferModal');showToast('Offer created successfully')">Create Offer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+  <span id="toastMsg">Action completed</span>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
