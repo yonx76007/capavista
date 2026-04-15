@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Capavista Cave House · Göreme, Cappadocia</title>
+  <meta name="description" content="Photo gallery of Capavista Cave House — cave rooms, stone rooms, rooftop terrace, hot air balloons, Turkish breakfast and Göreme views." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">Capavista<span>Cave House · Cappadocia</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html"    data-i18n="nav.home">Home</a></li>
+      <li><a href="rooms.html"    data-i18n="nav.rooms">Rooms</a></li>
+      <li><a href="packages.html" data-i18n="nav.packages">Packages</a></li>
+      <li><a href="gallery.html"  data-i18n="nav.gallery">Gallery</a></li>
+      <li><a href="contact.html"  data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav__right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
+      </div>
+      <button class="btn-book-nav js-book" data-i18n="nav.book">Book Now</button>
+      <a href="login.html" class="nav__admin-access" aria-label="Admin Portal" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+        </svg>
+      </a>
+    </div>
+    <button class="nav__hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileMenu">
+  <button class="nav__mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a><a href="rooms.html">Rooms</a>
+  <a href="packages.html">Packages</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+  <div class="lang-switcher" style="margin-top:24px">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ar">AR</button>
+    <button class="lang-btn" data-lang="tr">TR</button>
+  </div>
+</div>
+
+<!-- PAGE HERO — rooftop with wicker furniture and balloons -->
+<section class="page-hero">
+  <div class="page-hero__bg">
+    <img src="../Capavista Cave House/b932e973.jpeg" alt="Capavista rooftop terrace at balloon sunrise" />
+  </div>
+  <div class="page-hero__content">
+    <span class="section-tag">Visual Story</span>
+    <h1 class="section-title" style="color:var(--white)">Photo <em>Gallery</em></h1>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-page">
+  <div class="container">
+
+    <!-- Filter buttons -->
+    <div class="gallery-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cave">Cave Rooms</button>
+      <button class="filter-btn" data-filter="stone">Stone Rooms</button>
+      <button class="filter-btn" data-filter="terrace">Rooftop &amp; Terrace</button>
+      <button class="filter-btn" data-filter="balloon">Balloon Views</button>
+      <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+      <button class="filter-btn" data-filter="exterior">Hotel Exterior</button>
+    </div>
+
+    <!-- Masonry grid — every image from the folder, correctly categorised -->
+    <div class="gallery-full-grid">
+
+      <!-- TERRACE & BALLOON VIEWS -->
+      <div class="gallery-full-item" data-cat="balloon">
+        <img src="../Capavista Cave House/42deda36.jpeg" alt="Rooftop terrace at dawn with dozens of hot air balloons" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="terrace">
+        <img src="../Capavista Cave House/b932e973.jpeg" alt="Rooftop terrace with wicker seating and balloon views" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="balloon">
+        <img src="../Capavista Cave House/83041853.jpeg" alt="Rooftop at balloon sunrise" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="balloon">
+        <img src="../Capavista Cave House/905d99e8.jpeg" alt="Hot air balloons over Göreme at dawn" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="balloon">
+        <img src="../Capavista Cave House/4a1361f5.jpeg" alt="Rooftop daybed with balloon in sky" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="terrace">
+        <img src="../Capavista Cave House/acab21c0.jpeg" alt="Rooftop terrace daytime with rock valley view" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="terrace">
+        <img src="../Capavista Cave House/8b1a7942.jpeg" alt="Rooftop terrace with Cappadocia valley view" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="balloon">
+        <img src="../Capavista Cave House/ef92d3ea_edited_c999.jpeg" alt="Close balloon over rooftop sofa at sunrise" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="balloon">
+        <img src="../Capavista Cave House/88d3532f.jpeg" alt="Many balloons visible from hotel roof" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="terrace">
+        <img src="../Capavista Cave House/0146b11c.jpeg" alt="Covered terrace with traditional seating and valley view" loading="lazy" />
+      </div>
+
+      <!-- EXTERIOR -->
+      <div class="gallery-full-item" data-cat="exterior">
+        <img src="../Capavista Cave House/63ab1ea6.jpeg" alt="Capavista Cave House exterior built against rock face" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="exterior">
+        <img src="../Capavista Cave House/709e8e15.jpeg" alt="CappaVista House entrance gate at dusk with balloon" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="exterior">
+        <img src="../Capavista Cave House/630717c0_edited_4c8a.jpeg" alt="CappaVista House sign and entrance" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="exterior">
+        <img src="../Capavista Cave House/35a5ba6e.jpeg" alt="Hotel courtyard with Cappavista Dreams neon sign" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="exterior">
+        <img src="../Capavista Cave House/7700fc00.jpeg" alt="Hotel rooftop terrace staircase and stone walls" loading="lazy" />
+      </div>
+
+      <!-- CAVE ROOMS -->
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/a7089d46.jpeg" alt="Cave room — double bed with red satin and wall sconces" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/f0808832.jpeg" alt="Cave room — volcanic tufa walls and double bed" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/45fe8299.jpeg" alt="Cave room — warm wall lighting and pink bedding" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/a3de7433.jpeg" alt="Cave room — double bed and window" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/0b0707ff.jpeg" alt="Cave room with TV and open en-suite bathroom" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/53e27bac.jpeg" alt="Cave room — beige toned with TV and dressing table" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/55e41531.jpeg" alt="Cave room — wooden carved door and coat rack" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/3d838e03.jpeg" alt="Cave room — neutral bedding and wall sconces" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/963f7c9b.jpeg" alt="Cave room with TV and yellow curtains" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/6ef44005.jpeg" alt="Cave room with dressing table and mini fridge" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/w1024h766x0y0-7a865bfd.jpeg" alt="Cave room — light bedding and bamboo coat rack" loading="lazy" />
+      </div>
+
+      <!-- STONE ROOMS -->
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/84a295ae.jpeg" alt="Stone room — limestone walls, wooden beamed ceiling, teal brocade" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/4cdb3f27.jpeg" alt="Stone room — TV and wooden dressing table" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/fd2f7efc.jpeg" alt="Stone room — multiple windows with red curtains and table" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/w1024h766x0y0-c1c51057.jpeg" alt="Stone room — wall TV and bamboo coat rack" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/4f1cd1de.jpeg" alt="Stone room with purple curtains and in-room dining table" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/39d8f091.jpeg" alt="Stone room double bed with teal brocade cushions" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/fd1dbb4f.jpeg" alt="Stone room with arched headboard niche and wooden beams" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/7803ec90.jpeg" alt="Superior stone room with in-room dining table and chairs" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/e84ba126.jpeg" alt="Stone room with steps to sleeping area, TV and coat rack" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="stone">
+        <img src="../Capavista Cave House/40ddc3f6.jpeg" alt="Traditional Suite — ornate wooden ceiling and sitting area" loading="lazy" />
+      </div>
+
+      <!-- ROOM DETAILS -->
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/3e6b0e90.jpeg" alt="Wooden dressing table with mirror, kettle and mini fridge" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/4462f277.jpeg" alt="Room dressing table with mirror and kettle" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/6001d4b8.jpeg" alt="Stone wall entry with coat rack and wooden bench" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="cave">
+        <img src="../Capavista Cave House/0ff6f765.jpeg" alt="Bamboo coat rack in cave room" loading="lazy" />
+      </div>
+
+      <!-- BREAKFAST -->
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/35196d30.jpeg" alt="Turkish breakfast set on the open terrace" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/79afc31c.jpeg" alt="Breakfast table with Turkish tea on terrace" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/396df63d.jpeg" alt="Full Turkish breakfast buffet spread" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/a199f72f.jpeg" alt="Breakfast buffet with cheeses and vegetables" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/42f29fe3.jpeg" alt="Fresh cheese and vegetable breakfast selection" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/5d338a11.jpeg" alt="Cheese portions and fresh fruit at breakfast" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/7963a643.jpeg" alt="Boiled eggs and cereals at breakfast buffet" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/fc065000.jpeg" alt="Fresh börek pastries and fruit at breakfast" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/83c45be8.jpeg" alt="Breakfast buffet pastries and salad selection" loading="lazy" />
+      </div>
+      <div class="gallery-full-item" data-cat="breakfast">
+        <img src="../Capavista Cave House/c30d35af.jpeg" alt="Guests enjoying breakfast on the terrace" loading="lazy" />
+      </div>
+
+    </div><!-- end gallery-full-grid -->
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close">✕</button>
+  <button class="lightbox__prev">‹</button>
+  <img class="lightbox__img" src="" alt="Gallery image" />
+  <button class="lightbox__next">›</button>
+</div>
+
+<!-- BOOK CTA -->
+<section class="best-price">
+  <div class="container">
+    <div class="best-price__inner reveal">
+      <div class="best-price__icon">📸</div>
+      <div class="best-price__text">
+        <h2>Ready to Experience It in Person?</h2>
+        <p>No photo captures the quiet magic of waking up inside these walls. Book your stay and see for yourself.</p>
+      </div>
+      <div class="best-price__cta">
+        <button class="btn-primary js-book" data-i18n="bookNow">Book Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="logo-text">Capavista</div>
+        <div class="logo-sub">Cave House · Cappadocia</div>
+        <p data-i18n="footer.desc">A boutique cave hotel in the heart of Göreme, Cappadocia.</p>
+      </div>
+      <div class="footer__col"><h4>Navigation</h4><ul>
+        <li><a href="index.html">Home</a></li><li><a href="rooms.html">Rooms</a></li>
+        <li><a href="packages.html">Packages</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer__col"><h4>Experiences</h4><ul>
+        <li><a href="packages.html">Hot Air Balloon</a></li><li><a href="packages.html">ATV Tour</a></li>
+        <li><a href="packages.html">Pottery Workshop</a></li><li><a href="contact.html">Airport Transfer</a></li>
+      </ul></div>
+      <div class="footer__col footer__contact"><h4>Contact</h4>
+        <p><span>📍</span><span>Müze Caddesi, Göreme, Nevşehir, Turkey</span></p>
+        <p><span>📞</span><span>+90 532 XXX XX XX</span></p>
+        <p><span>✉</span><span>info@capavistacavehouse.com</span></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p data-i18n="footer.copy">© 2025 Capavista Cave House. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
