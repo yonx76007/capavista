@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capavista Cave House — Luxury Cave Hotel in Cappadocia</title>
+  <meta name="description" content="Capavista Cave House — A boutique cave hotel in Göreme, Cappadocia. Carved stone rooms, rooftop terrace with hot air balloon views, and a rich Turkish breakfast. Book direct for best rates." />
+  <meta property="og:title" content="Capavista Cave House · Göreme, Cappadocia" />
+  <meta property="og:description" content="Authentic cave and stone rooms in the heart of Göreme. Watch balloons rise from our rooftop terrace every morning." />
+  <meta property="og:image" content="../Capavista Cave House/42deda36.jpeg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      Capavista
+      <span>Cave House · Cappadocia</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html"  data-i18n="nav.home">Home</a></li>
+      <li><a href="rooms.html"  data-i18n="nav.rooms">Rooms</a></li>
+      <li><a href="packages.html" data-i18n="nav.packages">Packages</a></li>
+      <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav__right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
+      </div>
+      <button class="btn-book-nav js-book" data-i18n="nav.book">Book Now</button>
+      <a href="login.html" class="nav__admin-access" aria-label="Admin Portal" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+        </svg>
+      </a>
+    </div>
+    <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav__mobile" id="mobileMenu">
+  <button class="nav__mobile-close" id="mobileClose">✕</button>
+  <a href="index.html"    data-i18n="nav.home">Home</a>
+  <a href="rooms.html"    data-i18n="nav.rooms">Rooms</a>
+  <a href="packages.html" data-i18n="nav.packages">Packages</a>
+  <a href="gallery.html"  data-i18n="nav.gallery">Gallery</a>
+  <a href="contact.html"  data-i18n="nav.contact">Contact</a>
+  <div class="lang-switcher" style="margin-top:24px">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ar">AR</button>
+    <button class="lang-btn" data-lang="tr">TR</button>
+  </div>
+  <button class="btn-primary js-book" style="margin-top:16px" data-i18n="nav.book">Book Now</button>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero__slides">
+    <!-- Slide 1: Rooftop terrace at dawn with dozens of balloons -->
+    <div class="hero__slide active">
+      <img src="../Capavista Cave House/42deda36.jpeg" alt="Capavista rooftop terrace with hot air balloons at dawn" loading="eager" />
+    </div>
+    <!-- Slide 2: Rooftop terrace with wicker furniture and balloons -->
+    <div class="hero__slide">
+      <img src="../Capavista Cave House/b932e973.jpeg" alt="Capavista rooftop terrace and balloon panorama" loading="lazy" />
+    </div>
+    <!-- Slide 3: Covered terrace with valley view -->
+    <div class="hero__slide">
+      <img src="../Capavista Cave House/0146b11c.jpeg" alt="Capavista covered terrace with Göreme valley view" loading="lazy" />
+    </div>
+    <!-- Slide 4: Hotel exterior against the rock face -->
+    <div class="hero__slide">
+      <img src="../Capavista Cave House/63ab1ea6.jpeg" alt="Capavista Cave House exterior Göreme" loading="lazy" />
+    </div>
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="container">
+    <div class="hero__content">
+      <span class="hero__tag" data-i18n="hero.tag">Göreme, Cappadocia · Turkey</span>
+      <h1 class="hero__title">
+        <span data-i18n="hero.title">Wake Up to</span>
+        <em data-i18n="hero.titleItalic">a Sky Full of Balloons</em>
+      </h1>
+      <p class="hero__sub" data-i18n="hero.sub">Authentic cave &amp; stone rooms · Rooftop balloon views · Turkish breakfast included</p>
+      <div class="hero__cta">
+        <button class="btn-primary js-book" data-i18n="hero.cta1">Reserve Your Stay</button>
+        <a href="rooms.html" class="btn-secondary" data-i18n="hero.cta2">Explore Rooms</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <div class="hero__scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+
+  <div class="hero__dots">
+    <div class="hero__dot active"></div>
+    <div class="hero__dot"></div>
+    <div class="hero__dot"></div>
+    <div class="hero__dot"></div>
+  </div>
+</section>
+
+<!-- ══ WHY BOOK DIRECT ════════════════════════════════ -->
+<section class="why-direct">
+  <div class="container">
+    <div class="why-direct__inner">
+      <div class="why-direct__left reveal-left">
+        <span class="section-tag" data-i18n="whyDirect.tag">Why Book Direct</span>
+        <h2 class="section-title" style="color:var(--white)">
+          The Best Experience<br><em>Begins Here</em>
+        </h2>
+        <div class="divider"></div>
+        <p class="section-sub" style="color:rgba(255,255,255,0.6)" data-i18n="whyDirect.sub">
+          Booking directly with us guarantees the lowest rate, exclusive privileges, and a warm personal welcome from our team.
+        </p>
+        <div class="why-direct__perks">
+          <div class="perk">
+            <div class="perk__icon">✦</div>
+            <div class="perk__text">
+              <h4 data-i18n="whyDirect.perks.0.title">Best Rate Guarantee</h4>
+              <p data-i18n="whyDirect.perks.0.text">Price-match promise on every reservation.</p>
+            </div>
+          </div>
+          <div class="perk">
+            <div class="perk__icon">↑</div>
+            <div class="perk__text">
+              <h4 data-i18n="whyDirect.perks.1.title">Complimentary Upgrade</h4>
+              <p data-i18n="whyDirect.perks.1.text">Subject to availability at check-in.</p>
+            </div>
+          </div>
+          <div class="perk">
+            <div class="perk__icon">◷</div>
+            <div class="perk__text">
+              <h4 data-i18n="whyDirect.perks.2.title">Flexible Check-in / Check-out</h4>
+              <p data-i18n="whyDirect.perks.2.text">We do our best to accommodate your schedule.</p>
+            </div>
+          </div>
+          <div class="perk">
+            <div class="perk__icon">◈</div>
+            <div class="perk__text">
+              <h4 data-i18n="whyDirect.perks.3.title">Welcome Gift</h4>
+              <p data-i18n="whyDirect.perks.3.text">A small token of Cappadocian hospitality on arrival.</p>
+            </div>
+          </div>
+          <div class="perk">
+            <div class="perk__icon">✕</div>
+            <div class="perk__text">
+              <h4 data-i18n="whyDirect.perks.4.title">Free Cancellation</h4>
+              <p data-i18n="whyDirect.perks.4.text">Flexible booking terms, no hidden fees.</p>
+            </div>
+          </div>
+          <div class="perk">
+            <div class="perk__icon">☎</div>
+            <div class="perk__text">
+              <h4 data-i18n="whyDirect.perks.5.title">Direct Support</h4>
+              <p data-i18n="whyDirect.perks.5.text">Reach our team directly via WhatsApp, any time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-direct__right reveal-right">
+        <!-- Stone room with wooden beams -->
+        <div class="why-direct__img-main">
+          <img src="../Capavista Cave House/84a295ae.jpeg" alt="Capavista stone room interior" />
+        </div>
+        <!-- Rooftop terrace balloon view -->
+        <div class="why-direct__img-accent">
+          <img src="../Capavista Cave House/905d99e8.jpeg" alt="Rooftop terrace with hot air balloons" />
+        </div>
+        <div class="price-badge">
+          <span class="price-badge__label">Best Rate</span>
+          <span class="price-badge__value">Direct</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROOMS PREVIEW ══════════════════════════════════ -->
+<section class="rooms-preview">
+  <div class="container">
+    <div class="rooms-preview__head reveal">
+      <span class="section-tag" data-i18n="roomsPreview.tag">Our Rooms</span>
+      <h2 class="section-title">Two Styles of<br><em>Cappadocian Character</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub" data-i18n="roomsPreview.sub">
+        Choose between a room carved from volcanic tufa rock or one built with hand-cut Cappadocian stone — each finished with warm textiles, en-suite shower and every essential comfort.
+      </p>
+    </div>
+
+    <div class="rooms-grid reveal">
+      <!-- Cave Room -->
+      <div class="room-card">
+        <div class="room-card__img">
+          <img src="../Capavista Cave House/a7089d46.jpeg" alt="Cave Room — volcanic tufa walls and double bed" loading="lazy" />
+        </div>
+        <div class="room-card__overlay">
+          <div class="room-card__info">
+            <h3 data-i18n="roomsPreview.rooms.0.name">Cave Room</h3>
+            <p data-i18n="roomsPreview.rooms.0.size">Volcanic Tufa Rock</p>
+            <a href="rooms.html" class="room-card__link" data-i18n="learnMore">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Stone Room -->
+      <div class="room-card">
+        <div class="room-card__img">
+          <img src="../Capavista Cave House/84a295ae.jpeg" alt="Stone Room — limestone walls and wooden beamed ceiling" loading="lazy" />
+        </div>
+        <div class="room-card__overlay">
+          <div class="room-card__info">
+            <h3 data-i18n="roomsPreview.rooms.1.name">Stone Room</h3>
+            <p data-i18n="roomsPreview.rooms.1.size">Cut Limestone &amp; Wooden Beams</p>
+            <a href="rooms.html" class="room-card__link" data-i18n="learnMore">Learn More</a>
+          </div>
+        </div>
+      </div>
+      <!-- Traditional Suite -->
+      <div class="room-card">
+        <div class="room-card__img">
+          <img src="../Capavista Cave House/40ddc3f6.jpeg" alt="Traditional Suite — ornate wooden ceiling and sitting area" loading="lazy" />
+        </div>
+        <div class="room-card__overlay">
+          <div class="room-card__info">
+            <h3 data-i18n="roomsPreview.rooms.2.name">Traditional Suite</h3>
+            <p data-i18n="roomsPreview.rooms.2.size">Ornate Ceiling &amp; Sitting Area</p>
+            <a href="rooms.html" class="room-card__link" data-i18n="learnMore">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rooms-preview__cta reveal">
+      <a href="rooms.html" class="btn-primary" data-i18n="roomsPreview.cta">View All Rooms</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BALLOON / ROOFTOP HIGHLIGHT ═══════════════════ -->
+<section class="balloon-pkg">
+  <div class="balloon-pkg__bg">
+    <img src="../Capavista Cave House/905d99e8.jpeg" alt="Rooftop terrace with hot air balloons at sunrise" loading="lazy" />
+  </div>
+  <div class="balloon-pkg__content" style="width:100%">
+    <div class="container">
+      <div class="balloon-pkg__inner">
+        <div class="reveal-left">
+          <span class="section-tag" data-i18n="balloon.tag">Signature Experience</span>
+          <h2 class="section-title" style="color:var(--white)">
+            Front-Row Seats<br><em>Every Morning</em>
+          </h2>
+          <div class="divider"></div>
+          <p class="section-sub" style="color:rgba(255,255,255,0.7)" data-i18n="balloon.sub">
+            Our rooftop terrace faces the sky over Göreme. Every morning at sunrise, dozens of hot air balloons drift past — and you have the best seat in town, with your tea in hand.
+          </p>
+          <ul class="pkg-includes">
+            <li data-i18n="balloon.includes.0">Shared rooftop terrace with panoramic views</li>
+            <li data-i18n="balloon.includes.1">Prime balloon-watching spot at sunrise</li>
+            <li data-i18n="balloon.includes.2">Outdoor wicker seating and tables</li>
+            <li data-i18n="balloon.includes.3">Covered traditional terrace seating</li>
+            <li data-i18n="balloon.includes.4">Balloon flight packages available on request</li>
+            <li data-i18n="balloon.includes.5">Turkish breakfast served on terrace daily</li>
+          </ul>
+          <br/>
+          <a href="packages.html" class="btn-primary" data-i18n="balloon.cta">View Balloon Packages</a>
+        </div>
+        <div class="balloon-pkg__visual reveal-right">
+          <div class="balloon-pkg__img1">
+            <img src="../Capavista Cave House/83041853.jpeg" alt="Rooftop at sunrise with hot air balloons" loading="lazy" />
+          </div>
+          <div class="balloon-pkg__img2">
+            <img src="../Capavista Cave House/4a1361f5.jpeg" alt="Rooftop daybed with balloon in sky" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY STRIP ══════════════════════════════════ -->
+<section class="gallery-strip">
+  <div class="container">
+    <div class="gallery-strip__head reveal">
+      <span class="section-tag">Gallery</span>
+      <h2 class="section-title">A Glimpse of<br><em>Capavista</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gallery-masonry reveal">
+      <!-- Stone room — tall feature -->
+      <div class="gallery-item gallery-item--tall">
+        <div class="gallery-item__img">
+          <img src="../Capavista Cave House/fd1dbb4f.jpeg" alt="Stone room with arched headboard niche" loading="lazy" />
+        </div>
+        <div class="gallery-item__overlay"><span>+</span></div>
+      </div>
+      <!-- Rooftop breakfast table -->
+      <div class="gallery-item">
+        <div class="gallery-item__img" style="aspect-ratio:4/3">
+          <img src="../Capavista Cave House/35196d30.jpeg" alt="Breakfast on the terrace" loading="lazy" />
+        </div>
+        <div class="gallery-item__overlay"><span>+</span></div>
+      </div>
+      <!-- Rooftop balloons wide -->
+      <div class="gallery-item gallery-item--wide">
+        <div class="gallery-item__img" style="aspect-ratio:16/7">
+          <img src="../Capavista Cave House/b932e973.jpeg" alt="Rooftop terrace at balloon sunrise" loading="lazy" />
+        </div>
+        <div class="gallery-item__overlay"><span>+</span></div>
+      </div>
+      <!-- Cave room -->
+      <div class="gallery-item">
+        <div class="gallery-item__img" style="aspect-ratio:4/3">
+          <img src="../Capavista Cave House/45fe8299.jpeg" alt="Cave room with warm wall lighting" loading="lazy" />
+        </div>
+        <div class="gallery-item__overlay"><span>+</span></div>
+      </div>
+      <!-- Hotel exterior -->
+      <div class="gallery-item">
+        <div class="gallery-item__img" style="aspect-ratio:4/3">
+          <img src="../Capavista Cave House/630717c0_edited_4c8a.jpeg" alt="CappaVista House entrance and sign" loading="lazy" />
+        </div>
+        <div class="gallery-item__overlay"><span>+</span></div>
+      </div>
+      <!-- Covered terrace — tall feature -->
+      <div class="gallery-item gallery-item--tall">
+        <div class="gallery-item__img">
+          <img src="../Capavista Cave House/0146b11c.jpeg" alt="Covered terrace with Göreme valley view" loading="lazy" />
+        </div>
+        <div class="gallery-item__overlay"><span>+</span></div>
+      </div>
+    </div>
+    <div class="gallery-strip__cta reveal">
+      <a href="gallery.html" class="btn-primary" data-i18n="viewAll">View All Photos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ════════════════════════════════════════ -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews__head reveal">
+      <span class="section-tag" data-i18n="reviews.tag">Guest Voices</span>
+      <h2 class="section-title" style="color:var(--white)" data-i18n="reviews.title">What Our Guests Say</h2>
+      <div class="divider" style="margin:24px auto"></div>
+    </div>
+
+    <div class="reviews-slider">
+      <div class="reviews-track">
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text" data-i18n="reviews.items.0.text">
+            "Waking up and stepping onto the rooftop to watch the balloons rise was something we will never forget. The cave room was cosy, clean and felt like nowhere else we've ever stayed."
+          </p>
+          <div class="review-author">
+            <div class="review-author__avatar">SJ</div>
+            <div>
+              <div class="review-author__name" data-i18n="reviews.items.0.name">Sophie &amp; James</div>
+              <div class="review-author__loc" data-i18n="reviews.items.0.location">United Kingdom</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text" data-i18n="reviews.items.1.text">
+            "The rooftop terrace with balloons floating by at dawn was magical. The Turkish breakfast spread was one of the best we had in all of Türkiye. The team was warm and helpful throughout."
+          </p>
+          <div class="review-author">
+            <div class="review-author__avatar">FA</div>
+            <div>
+              <div class="review-author__name" data-i18n="reviews.items.1.name">Fatima Al-Rashid</div>
+              <div class="review-author__loc" data-i18n="reviews.items.1.location">United Arab Emirates</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text" data-i18n="reviews.items.2.text">
+            "Çok güzel bir yer. Sabah kahvaltısı harikaydı, teras manzarası eşsizdi ve odamız temiz ve sıcaktı. Göreme'nin kalbinde, her şeye yürüme mesafesinde. Kesinlikle tavsiye ederim."
+          </p>
+          <div class="review-author">
+            <div class="review-author__avatar">MA</div>
+            <div>
+              <div class="review-author__name" data-i18n="reviews.items.2.name">Mehmet &amp; Ayşe</div>
+              <div class="review-author__loc" data-i18n="reviews.items.2.location">Istanbul, Turkey</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text" data-i18n="reviews.items.3.text">
+            "The stone walls, wooden ceilings and the smell of fresh breakfast drifting up from the terrace — this place has a genuinely special atmosphere. Already planning to return next year."
+          </p>
+          <div class="review-author">
+            <div class="review-author__avatar">EV</div>
+            <div>
+              <div class="review-author__name" data-i18n="reviews.items.3.name">Elena Vasquez</div>
+              <div class="review-author__loc" data-i18n="reviews.items.3.location">Spain</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:12px;margin-top:32px">
+      <button class="reviews-prev btn-secondary" style="width:44px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;font-size:18px">‹</button>
+      <button class="reviews-next btn-secondary" style="width:44px;height:44px;padding:0;display:flex;align-items:center;justify-content:center;font-size:18px">›</button>
+    </div>
+
+    <div class="reviews__platform reveal">
+      <div class="platform-score">
+        <span class="score" data-i18n="reviews.scores.0.score">9.6</span>
+        <span class="label" data-i18n="reviews.scores.0.label">Booking.com</span>
+      </div>
+      <div style="width:1px;height:48px;background:rgba(196,150,90,0.3)"></div>
+      <div class="platform-score">
+        <span class="score" data-i18n="reviews.scores.1.score">4.9</span>
+        <span class="label" data-i18n="reviews.scores.1.label">TripAdvisor</span>
+      </div>
+      <div style="width:1px;height:48px;background:rgba(196,150,90,0.3)"></div>
+      <div class="platform-score">
+        <span class="score" data-i18n="reviews.scores.2.score">4.8</span>
+        <span class="label" data-i18n="reviews.scores.2.label">Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHATSAPP CTA ════════════════════════════════════ -->
+<section class="whatsapp-cta">
+  <div class="container">
+    <div class="whatsapp-cta__inner">
+      <div class="whatsapp-cta__left reveal-left">
+        <h2 data-i18n="whatsapp.title">Chat With Us Directly</h2>
+        <p data-i18n="whatsapp.sub">Have a question or special request? Our team responds within minutes. Ask about room types, airport transfers, balloon packages, and more.</p>
+      </div>
+      <button class="btn-whatsapp js-whatsapp reveal-right" data-i18n="whatsapp.cta">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp Us
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BEST PRICE GUARANTEE ═══════════════════════════ -->
+<section class="best-price">
+  <div class="container">
+    <div class="best-price__inner reveal">
+      <div class="best-price__icon">🏷</div>
+      <div class="best-price__text">
+        <h2 data-i18n="bestPrice.title">Best Price Guaranteed</h2>
+        <p data-i18n="bestPrice.sub">Find a lower rate anywhere online and we'll match it — plus add a complimentary room upgrade where available. Booking direct is always the smartest choice.</p>
+      </div>
+      <div class="best-price__cta">
+        <button class="btn-primary js-book" data-i18n="bestPrice.cta">Book Direct Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LOCATION ════════════════════════════════════════ -->
+<section class="location-section">
+  <div class="container">
+    <div class="location-section__inner">
+      <div class="reveal-left">
+        <span class="section-tag" data-i18n="location.tag">Our Location</span>
+        <h2 class="section-title">Heart of<br><em>Göreme</em></h2>
+        <div class="divider"></div>
+        <p class="section-sub" data-i18n="location.sub">
+          Set in the historic centre of Göreme village, steps from the Open Air Museum and within easy reach of the region's iconic valleys and underground cities.
+        </p>
+        <div class="location-features">
+          <div class="loc-feat">
+            <span class="loc-feat__icon">🏛️</span>
+            <div>
+              <h4 data-i18n="location.features.0.title">Göreme Open Air Museum</h4>
+              <p data-i18n="location.features.0.text">5 min walk</p>
+            </div>
+          </div>
+          <div class="loc-feat">
+            <span class="loc-feat__icon">🎈</span>
+            <div>
+              <h4 data-i18n="location.features.1.title">Balloon Launch Area</h4>
+              <p data-i18n="location.features.1.text">Visible from rooftop daily</p>
+            </div>
+          </div>
+          <div class="loc-feat">
+            <span class="loc-feat__icon">✈️</span>
+            <div>
+              <h4 data-i18n="location.features.2.title">Nevşehir Airport</h4>
+              <p data-i18n="location.features.2.text">35 min drive</p>
+            </div>
+          </div>
+          <div class="loc-feat">
+            <span class="loc-feat__icon">🏔️</span>
+            <div>
+              <h4 data-i18n="location.features.3.title">Valley Walks &amp; ATV Trails</h4>
+              <p data-i18n="location.features.3.text">Walking distance</p>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <a href="contact.html" class="btn-primary" data-i18n="learnMore">Get Directions</a>
+      </div>
+      <div class="location-map reveal-right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3136.8!2d34.834!3d38.642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d0596e6f0c9e7f%3A0x3c75f55b0d79a6c6!2sGoreme%2C%20Nevsehir%2C%20Turkey!5e0!3m2!1sen!2s!4v1700000000000"
+          title="Capavista Cave House location in Göreme"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="logo-text">Capavista</div>
+        <div class="logo-sub">Cave House · Cappadocia</div>
+        <p data-i18n="footer.desc">A boutique cave hotel in the heart of Göreme, Cappadocia — authentic stone rooms, rooftop balloon views, and a warm Turkish welcome.</p>
+        <div class="social-links">
+          <a class="social-link" href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a class="social-link" href="#" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html"    data-i18n="footer.links.0">Home</a></li>
+          <li><a href="rooms.html"    data-i18n="footer.links.1">Rooms</a></li>
+          <li><a href="packages.html" data-i18n="footer.links.2">Packages</a></li>
+          <li><a href="gallery.html"  data-i18n="footer.links.3">Gallery</a></li>
+          <li><a href="contact.html"  data-i18n="footer.links.4">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Experiences</h4>
+        <ul>
+          <li><a href="packages.html" data-i18n="footer.services.0">Hot Air Balloon</a></li>
+          <li><a href="packages.html" data-i18n="footer.services.1">ATV Valley Tour</a></li>
+          <li><a href="packages.html" data-i18n="footer.services.2">Pottery Workshop</a></li>
+          <li><a href="packages.html" data-i18n="footer.services.3">Wine Tasting</a></li>
+          <li><a href="contact.html"  data-i18n="footer.services.4">Airport Transfer</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__contact">
+        <h4>Contact</h4>
+        <p><span>📍</span><span data-i18n="footer.contact.address">Müze Caddesi, Göreme, Nevşehir 50180, Turkey</span></p>
+        <p><span>📞</span><span data-i18n="footer.contact.phone">+90 532 XXX XX XX</span></p>
+        <p><span>✉</span><span data-i18n="footer.contact.email">info@capavistacavehouse.com</span></p>
+        <p><span>⏰</span><span data-i18n="footer.contact.hours">Open 24 hours · 7 days</span></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p data-i18n="footer.copy">© 2025 Capavista Cave House. All rights reserved.</p>
+      <p>Powered by <a href="#">Reseliva</a> · <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
